@@ -18,6 +18,7 @@ const routes = [
     component: Default,
     children: [
       { path: '/perfil', name: 'profile', component: () => import('./../views/Profile.vue') },
+      { path: '/quartos', name: 'rooms', component: () => import('./../views/Rooms.vue') },
       { path: '/:id', name: 'detail', component: () => import('./../views/Details.vue') },
     ]
   },

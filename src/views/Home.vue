@@ -49,8 +49,8 @@
         <h2 class="font-weight-black text-center">Basta adicionar o número do Whatsapp ou clicar no link e já começar a falar!</h2>
       </div>
       <div class="home__contact">
-        <span class="phone font-weight-bold">(55) 99992-9992</span>
-        <v-btn text color="light-green lighten-2">Link aqui</v-btn>
+        <!-- <span class="phone font-weight-bold">(55) 99992-9992</span> -->
+        <v-btn text color="light-green lighten-2" href="https://t.me/ParadaCerta_bot">Link aqui</v-btn>
       </div>
       <div class="home__signup ">
         <div class="home__signup--header">

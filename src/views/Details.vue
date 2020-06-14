@@ -1,6 +1,5 @@
 <template>
   <main>
-    <Payment v-if="inPay" class="payment" :methodsPayment='payment' @close="closePay"/>
     <div class="details__button">
       <v-btn color="deep-orange" large depressed dark @click="pay">Comprar</v-btn>
     </div>
@@ -93,6 +92,13 @@
         </div>
       </div>
     </div>
+    <Payment 
+      v-if="inPay" 
+      class="payment" 
+      :methodsPayment='payment' 
+      :owner-name="owner.name"
+      :owner-contact="owner.contact"
+      @close="closePay"/>
   </main>
 </template>
 
@@ -135,6 +141,7 @@ export default {
         { label: 'Permite Caminhão', icon: 'directions_bus', key: 'truckStation' },
         { label: 'Higiene Pessoal', icon: 'wash', key: 'bathroom' },
       ],
+
       comments: [],
       stars: 3.56,
       attractives: { },
@@ -206,6 +213,6 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 9999;
   }
 </style>

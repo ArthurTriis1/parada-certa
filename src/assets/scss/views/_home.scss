@@ -1,0 +1,145 @@
+.home {
+  background-color: $green-default;
+  margin: -1rem;
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    flex: 1;
+
+    &.home__stripes,
+    &.home__hotel,
+    &.home__contact {
+      height: max-content;
+      flex: unset;
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+  }
+
+  &__title {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-size: 1.75rem;
+      line-height: 2rem;
+    }
+  }
+
+  &__subtitle {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+
+    h2 {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  &__contact {
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .phone {
+      display: inline-block;
+      padding: 0 1.25rem;
+      margin-right: .25rem;
+      border-right: 1px solid black;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  &__signup {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &--header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      h1 {
+        font-size: 1.75rem;
+        line-height: 2rem;
+      }
+
+      i {
+        margin-left: .25rem;
+      }
+    }
+  }
+
+  &__stripes {
+    padding: .75rem 0;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: .75rem;
+
+    div {
+      height: .75rem;
+      background-color: black;
+    }
+  }
+
+  &__hotel {
+    padding-bottom: 1rem;
+
+    &--infos {
+      width: 100%;
+    }
+
+    &--stars {
+      span {
+        margin-left: .25rem;
+        display: inline-block;
+      }
+    }
+
+    .v-avatar {
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+
+    .v-card {
+      &__actions {
+        padding-left: 0;
+      }
+
+      &__title {
+        padding-left: 0;
+        font-size: 1.25rem !important;
+        line-height: 1.75rem !important;
+        font-weight: bold;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+
+      }
+
+      &__subtitle {
+        padding-left: 0;
+        padding-bottom: 0;
+
+
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+      }
+    }
+  }
+}

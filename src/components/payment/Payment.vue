@@ -1,12 +1,12 @@
 <template>
   <div class="containerPayment">
-    <v-card color="success" width="100%" v-if="showSuccess">
+    <v-card color="success" tile width="100%" v-if="showSuccess">
       <div class="containerPayment__success">
         <p class="font-weight-bold text-center">Compra confirmada com sucesso!</p>
         <p class="font-weight-bold text-center">Tenha um bom descanso</p>
       </div>
     </v-card>
-    <v-card :loading="loading" v-else>
+    <v-card :loading="loading" tile v-else>
       <v-row justify="space-around">
         <v-radio-group v-model="choiceMethod" row>
           <v-radio
@@ -221,7 +221,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .textChoice {

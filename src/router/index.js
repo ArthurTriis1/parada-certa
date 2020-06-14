@@ -1,15 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Default from './../layouts/Default'
+import Index from './../layouts/Index'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
+  {
+    path: '/',
+    component: Index,
+    children: [
+      { path: '/', name: 'index', component: () => import('./../views/Home.vue') }
+    ]
+  },
   {
     path: '',
     component: Default,
     children: [
-      { path: '/:id', name: 'home', component: () => import('./../views/Details.vue')}
+      { path: '/:id', name: 'detail', component: () => import('./../views/Details.vue') }
     ]
   },
 ]

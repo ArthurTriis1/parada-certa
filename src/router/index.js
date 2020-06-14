@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '',
     component: Index,
     children: [
       { path: '/', name: 'index', component: () => import('./../views/Home.vue') }
@@ -17,7 +17,8 @@ const routes = [
     path: '',
     component: Default,
     children: [
-      { path: '/:id', name: 'detail', component: () => import('./../views/Details.vue') }
+      { path: '/perfil', name: 'profile', component: () => import('./../views/Profile.vue') },
+      { path: '/:id', name: 'detail', component: () => import('./../views/Details.vue') },
     ]
   },
 ]

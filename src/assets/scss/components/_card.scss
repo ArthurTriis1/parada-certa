@@ -1,0 +1,24 @@
+.cardItem {
+  margin-bottom: .75rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &--brand {
+      font-size: 1.25rem;
+      line-height: 1.25rem;
+      font-weight: bold;
+    }
+  }
+
+  &__infos {
+    padding-bottom: .75rem;
+    P {
+      font-size: .875rem;
+      line-height: 1.25rem;
+      margin-bottom: 0;
+      margin-top: .25rem;
+    }
+  }
+}

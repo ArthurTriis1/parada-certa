@@ -15,7 +15,6 @@
             :key="index"
             :label="`${method}`"
             :value="method"
-            v-model="choiceMethod"
           ></v-radio>
         </v-radio-group>
       </v-row>

@@ -1,7 +1,8 @@
 <template>
   <main>
+    <Payment v-if="inPay" class="payment" :methodsPayment='payment' @close="closePay"/>
     <div class="details__button">
-      <v-btn color="deep-orange" large depressed dark>Comprar</v-btn>
+      <v-btn color="deep-orange" large depressed dark @click="pay">Comprar</v-btn>
     </div>
     <div class="details__carousel">
       <v-carousel
@@ -23,13 +24,13 @@
       <p class="text-subtitle-1">{{address}}</p>
       <div class="details__info--tags">
           <span class="details__info--distance blue-grey lighten-4 text--secondary">{{distance}} de você</span>
-          <span class="details__info--gender text--secondary light-green lighten-2">Gênero {{gender.join(' e ')}}</span>
+          <span class="details__info--gender text--secondary light-green lighten-2">Para {{gender.join(' e ')}}</span>
       </div>
       <div class="details__info--convenient">
         <p class="text-caption text--secondary">{{ convenient.join('-') }}</p>
       </div>
       <div class="details__info--convenient">
-        <p class="text-caption text--secondary">Tamanho máximo: {{ maxSize }}</p>
+        <p class="text-caption text--secondary">Tamanho máximo do caminhão: {{ maxSize }}</p>
       </div>
       <div class="details__info--price">
         <p class="text-caption text-end">{{payment.join(" e ")}}</p>
@@ -97,12 +98,14 @@
 
 <script>
 import CommentItem from './../components/details/CommentItem';
+import Payment from './../components/payment/Payment';
 import apiMock from '../services/apiMock';
 import L from 'leaflet';
 
 export default {
   components: {
-    CommentItem
+    CommentItem,
+    Payment
   },
 
   computed: {
@@ -147,7 +150,18 @@ export default {
 
       map: '',
       baseLayer: '',
-      marker: ''
+      marker: '',
+
+      inPay: false,
+    }
+  },
+
+  methods: {
+    closePay(){
+      this.inPay = false
+    },
+    pay(){
+      this.inPay = true
     }
   },
 
@@ -186,5 +200,12 @@ export default {
     height: 220px;
     margin-top: 15px;
     border-radius: 12px;
+  }
+
+  .payment{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
   }
 </style>

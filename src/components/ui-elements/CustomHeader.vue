@@ -8,7 +8,7 @@
       <v-icon>arrow_back</v-icon>
     </v-btn>
     <div class="customHeader__logo">
-      <img src="./../../assets/parada-certa-logo.png" alt="">
+      <img src="./../../assets/parada-certa-logo.png" alt="" @click="$router.push({ name: 'rooms' })">
     </div>
   </v-app-bar>
 </template>
